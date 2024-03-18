@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+    <VanillaPsycastsExpanded.PsycasterPathDef>
+        <defName>VPECC_CarbuncleConjurerPath</defName>
+        <label>carbuncle conjurer</label>
+        <description>Call upon mystical carbuncles for help.</description>
+        <background>VPECarbuncleConjurer/PathBackgrounds/CarbConjBackground</background>
+        <altBackground>VPECarbuncleConjurer/PathBackgrounds/CarbConjBackgroundAlt</altBackground>
+        <tab>Psycasts</tab>
+        <tooltip>Carbuncle Conjurers are capable of calling upon friendly carbuncles, animals which can fight and haul. Summoned Carbuncles cannot breed and do not leave a corpse when killed.</tooltip>
+    </VanillaPsycastsExpanded.PsycasterPathDef>
+	
+</Defs>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+	<VFECore.Abilities.AbilityDef ParentName="VPECCPsycastBase">
+		<defName>VPECC_CarbuncleThunderbolt</defName>
+		<label>thunderbolt</label>
+		<description>Summons a bolt of lightning to strike a target, inflicting burns on direct hits and a larger area EMP damage.</description>
+		<iconPath>Abilities/Staticlord/Thunderbolt</iconPath>
+		<abilityClass>VanillaPsycastsExpanded.Staticlord.Ability_Thunderbolt</abilityClass>
+		<castTime>3</castTime>
+		<range>22.9</range>
+		<radius>6</radius>
+		<radiusStatFactors>
+			<PsychicSensitivity>1</PsychicSensitivity>
+		</radiusStatFactors>
+		<castSound>VPE_Thunderbolt_Cast</castSound>
+		<targetMode>Location</targetMode>
+	</VFECore.Abilities.AbilityDef>
+
+	<VFECore.Abilities.AbilityDef ParentName="VPECCPsycastBase">
+		<defName>VPECC_BreatheFlame</defName>
+		<label>breathe flame</label>
+		<description>Generates a brief, unidirectional skipgate within underground reservoirs of unrefined organic chemicals, along with a tiny spark in front of the caster’s mouth. Jets of blazing, unrefined chemfuel streak forth setting everything on fire.</description>
+		<iconPath>Abilities/Conflagrator/BreatheFlame</iconPath>
+		<abilityClass>VFECore.Abilities.Ability_ShootProjectile</abilityClass>
+		<castTime>6</castTime>
+		<range>14.9</range>
+		<targetMode>Pawn</targetMode>
+		<targetingParameters>
+			<canTargetItems>true</canTargetItems>
+			<canTargetLocations>true</canTargetLocations>
+		</targetingParameters>
+		<castSound>VPE_BreatheFlame_Cast</castSound>
+		<modExtensions>
+			<li Class="VFECore.Abilities.AbilityExtension_Projectile">
+				<projectile>VPE_FireBreath</projectile>
+			</li>
+		</modExtensions>
+	</VFECore.Abilities.AbilityDef>
+
+	<VFECore.Abilities.AbilityDef ParentName="VPECCPsycastBase">
+		<defName>VPECC_AnimalAllies</defName>
+		<label>animal allies</label>
+		<description>Infuses a large area with harmonic life force that influences animal behavior, causing them to attack those hostile to the caster for a duration scaling with their psychic sensitivity.</description>
+		<iconPath>Abilities/Wildspeaker/AnimalAllies</iconPath>
+		<abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
+		<castTime>60</castTime>
+		<durationTime>1800</durationTime>
+		<range>35</range>
+		<radius>24</radius>
+		<targetMode>Location</targetMode>
+		<hasAoE>true</hasAoE>
+		<targetingParametersForAoE>
+			<canTargetSelf>False</canTargetSelf>
+			<canTargetHumans>False</canTargetHumans>
+			<canTargetMechs>False</canTargetMechs>
+			<canTargetAnimals>True</canTargetAnimals>
+			<neverTargetIncapacitated>True</neverTargetIncapacitated>
+		</targetingParametersForAoE>
+		<modExtensions>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_GiveMentalState">
+				<stateDef>VPE_ManhunterTerritorial</stateDef>
+				<durationMultiplier>PsychicSensitivity</durationMultiplier>
+				<clearOthers>true</clearOthers>
+			</li>
+			<li Class="VFECore.Abilities.AbilityExtension_FleckOnTarget">
+				<fleckDef>PsycastPsychicEffect</fleckDef>
+				<scale>18</scale>
+				<allTargets>false</allTargets>
+				<tryCenter>true</tryCenter>
+			</li>
+		</modExtensions>
+	</VFECore.Abilities.AbilityDef>
+
+	<VFECore.Abilities.AbilityDef ParentName="VPECCPsycastBase">
+		<defName>VPECC_SnapFreeze</defName>
+		<label>snap freeze</label>
+		<description>Creates motes of psychic entropy and miniature skipgates to water reservoirs above all the targets in a small area, encasing them in ice. Victims will experience hypothermia but the ice can melt prematurely if the temperature is above freezing.</description>
+		<iconPath>Abilities/Frostshaper/SnapFreeze</iconPath>
+		<abilityClass>VanillaPsycastsExpanded.Ability_SnapFreeze</abilityClass>
+		<castTime>30</castTime>
+		<castSound>Psycast_Skip_Exit</castSound>
+		<durationTime>1200</durationTime>
+		<range>25</range>
+		<radius>3</radius>
+		<targetMode>Location</targetMode>
+		<hasAoE>true</hasAoE>
+		<targetingParametersForAoE>
+			<canTargetHumans>True</canTargetHumans>
+			<canTargetAnimals>True</canTargetAnimals>
+		</targetingParametersForAoE>
+		<needsTicking>true</needsTicking>
+		<goodwillImpact>-15</goodwillImpact>
+		<modExtensions>
+			<li Class="VFECore.Abilities.AbilityExtension_Hediff">
+				<hediff>VPECC_IceBlock</hediff>
+			</li>
+		</modExtensions>
+	</VFECore.Abilities.AbilityDef>
+
+</Defs>

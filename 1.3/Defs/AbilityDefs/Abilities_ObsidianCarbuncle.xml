@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+	<VFECore.Abilities.AbilityDef ParentName="VPECCPsycastBase">
+		<defName>VPECC_Darkness</defName>
+		<label>darkness</label>
+		<description>Select a target area to generate an orb of completely obfuscating darkness, the duration scaling with the caster’s psychic sensitivity. All vision is blocked and any attacks within or passing through will miss entirely.</description>
+		<iconPath>Abilities/Nightstalker/Darkness</iconPath>
+		<abilityClass>VFECore.Abilities.Ability_Spawn</abilityClass>
+		<castTime>60</castTime>
+		<range>24</range>
+		<radius>5</radius>
+		<targetMode>Location</targetMode>
+		<castSound>VPE_Darkness_Cast</castSound>
+		<durationTime>3600</durationTime>
+		<modExtensions>
+		  <li Class="VFECore.Abilities.AbilityExtension_Spawn">
+			<thing>VPE_Darkness</thing>
+		  </li>
+		</modExtensions>
+	  </VFECore.Abilities.AbilityDef>
+
+</Defs>

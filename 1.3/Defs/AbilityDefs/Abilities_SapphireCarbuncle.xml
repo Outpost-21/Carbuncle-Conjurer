@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+	<VFECore.Abilities.AbilityDef ParentName="VPECCPsycastBase">
+		<defName>VPECC_SummonRandomCarbuncle</defName>
+		<label>random carbuncle</label>
+		<description>Summons a permanent randomly chosen Carbuncle, from the 6 standard ones, loyal to the conjurer.</description>
+		<iconPath>VPECarbuncleConjurer/Abilities/Ability_CarbuncleHerd</iconPath>
+		<abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
+		<requireLineOfSight>True</requireLineOfSight>
+		<range>8.9</range>
+		<distanceToTarget>2.9</distanceToTarget>
+		<targetMode>Location</targetMode>
+		<castTime>360</castTime>
+		<needsTicking>true</needsTicking>
+		<showUndrafted>true</showUndrafted>
+		<modExtensions>
+			<li Class="VPECC.AbilityExtension_SummonRandomPawn">
+				<pawnKinds>
+					<li>VPECC_SummonedCarbuncleBlack</li>
+					<li>VPECC_SummonedCarbuncleBlue</li>
+					<li>VPECC_SummonedCarbuncleGreen</li>
+					<li>VPECC_SummonedCarbuncleYellow</li>
+					<li>VPECC_SummonedCarbuncleRed</li>
+					<li>VPECC_SummonedCarbuncleWhite</li>
+				</pawnKinds>
+				<count>1</count>
+			</li>
+			<li Class="VFECore.Abilities.AbilityExtension_FleckOnTarget">
+				<fleckDefs>
+					<li>PsycastSkipInnerExit</li>
+					<li>PsycastSkipOuterRingExit</li>
+				</fleckDefs>
+				<scale>0.42</scale>
+				<sound>Psycast_Skip_Exit</sound>
+				<preCastTicks>10</preCastTicks>
+			</li>
+			<li Class="VFECore.Abilities.AbilityExtension_EffecterOnTarget">
+				<effecterDef>Skip_Exit</effecterDef>
+				<maintainForTicks>60</maintainForTicks>
+				<scale>0.42</scale>
+			</li>
+		</modExtensions>
+		<cooldownTime>900</cooldownTime>
+	</VFECore.Abilities.AbilityDef>
+
+</Defs>

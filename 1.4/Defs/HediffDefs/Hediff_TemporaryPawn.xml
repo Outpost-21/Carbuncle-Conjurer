@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+	<HediffDef>
+		<defName>VPECC_TemporaryPawn</defName>
+		<label>temporary pawn</label>
+		<description>This pawn will die once the hediffs timer has elapsed.</description>
+		<hediffClass>VPECC.Hediff_TemporaryPawn</hediffClass>
+		<initialSeverity>0.001</initialSeverity>
+		<maxSeverity>1.0</maxSeverity>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>6</severityPerDay>
+			</li>
+		</comps>
+		<stages>
+			<li>
+				<becomeVisible>false</becomeVisible>
+			</li>
+		</stages>
+	</HediffDef>
+
+</Defs>

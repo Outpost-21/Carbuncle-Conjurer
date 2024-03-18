@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+	<HediffDef>
+		<defName>VPECC_IceBlock</defName>
+		<label>frozen solid</label>
+		<description>This entity is completely frozen in a block of ice, and will not be able to move until it melts.</description>
+		<hediffClass>VanillaPsycastsExpanded.Hediff_IceBlock</hediffClass>
+		<stages>
+			<li>
+				<becomeVisible>false</becomeVisible>
+			</li>
+		</stages>
+		<comps>
+			<li Class="HediffCompProperties_Disappears">
+				<showRemainingTime>True</showRemainingTime>
+				<disappearsAfterTicks>1200</disappearsAfterTicks>
+			</li>
+			<li Class="HediffCompProperties_DisappearsOnDeath" />
+		</comps>
+	</HediffDef>
+
+</Defs>

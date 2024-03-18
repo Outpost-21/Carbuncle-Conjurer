@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+	<VFECore.Abilities.AbilityDef ParentName="VPECCPsycastBase">
+		<defName>VPECC_CarbuncleShield</defName>
+		<label>shield</label>
+		<description>Generate a spherical skipgate on a target that sends all incoming ground-level projectiles to some distant place, the duration scaling with the target’s psychic sensitivity. People and items are not affected.</description>
+		<iconPath>Abilities/Protector/Overshield</iconPath>
+		<abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
+		<castTime>60</castTime>
+		<durationTime>600</durationTime>
+		<targetMode>Pawn</targetMode>
+		<range>5</range>
+		<castSound>VPE_Overshield_Cast</castSound>
+		<modExtensions>
+			<li Class="VFECore.Abilities.AbilityExtension_Hediff">
+				<hediff>VPECC_CarbuncleOvershield</hediff>
+			</li>
+		</modExtensions>
+	</VFECore.Abilities.AbilityDef>
+
+</Defs>

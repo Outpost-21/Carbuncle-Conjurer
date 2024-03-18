@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<ThingDef ParentName="AnimalThingBase">
+		<defName>VPECC_SummonedProtoCarbuncle</defName>
+		<label>proto carbuncle</label>
+		<description>Proto Carbuncles are a devestatingly powerful ancient species of carbuncle, capable of immense destruction.</description>
+		<statBases>
+			<MoveSpeed>6.5</MoveSpeed>
+			<ComfyTemperatureMin>-135</ComfyTemperatureMin>
+			<MarketValue>3000</MarketValue>
+			<ArmorRating_Sharp>0.60</ArmorRating_Sharp>
+			<ArmorRating_Blunt>0.40</ArmorRating_Blunt>
+			<ArmorRating_Heat>0.30</ArmorRating_Heat>
+		</statBases>
+		<tools>
+			<li>
+				<label>left claw</label>
+				<capacities>
+					<li>Scratch</li>
+				</capacities>
+				<power>24</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>FrontLeftPaw</linkedBodyPartsGroup>
+				<surpriseAttack>
+					<extraMeleeDamages>
+						<li>
+							<def>Stun</def>
+							<amount>14</amount>
+						</li>
+					</extraMeleeDamages>
+				</surpriseAttack>
+			</li>
+			<li>
+				<label>right claw</label>
+				<capacities>
+					<li>Scratch</li>
+				</capacities>
+				<power>24</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>FrontRightPaw</linkedBodyPartsGroup>
+				<surpriseAttack>
+					<extraMeleeDamages>
+						<li>
+							<def>Stun</def>
+							<amount>14</amount>
+						</li>
+					</extraMeleeDamages>
+				</surpriseAttack>
+			</li>
+			<li>
+				<capacities>
+					<li>Bite</li>
+				</capacities>
+				<power>29</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
+				<chanceFactor>0.9</chanceFactor>
+				<surpriseAttack>
+					<extraMeleeDamages>
+						<li>
+							<def>Stun</def>
+							<amount>14</amount>
+						</li>
+					</extraMeleeDamages>
+				</surpriseAttack>
+			</li>
+			<li>
+				<label>head</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>16</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+				<ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+				<chanceFactor>0.2</chanceFactor>
+			</li>
+		</tools>
+		<race>
+			<fleshType>VPECC_Carbie</fleshType>
+			<deathActionWorkerClass>VPECC.DeathActionWorker_Vanish</deathActionWorkerClass>
+			<body>QuadrupedAnimalWithPawsAndTail</body>
+			<petness>0.1</petness>
+			<baseBodySize>5.5</baseBodySize>
+			<baseHungerRate>0.16</baseHungerRate>
+			<baseHealthScale>10.0</baseHealthScale>
+			<foodType>OmnivoreRoughAnimal</foodType>
+			<leatherDef>Leather_Fox</leatherDef>
+			<trainability>Advanced</trainability>
+			<wildness>0.50</wildness>
+			<useMeatFrom>Fox_Fennec</useMeatFrom>
+			<gestationPeriodDays>10</gestationPeriodDays>
+			<manhunterOnDamageChance>0.05</manhunterOnDamageChance>
+			<manhunterOnTameFailChance>0.02</manhunterOnTameFailChance>
+			<litterSizeCurve>
+				<points>
+					<li>(0.5, 0)</li>
+					<li>(1, 1)</li>
+					<li>(2, 1)</li>
+					<li>(3, 0.2)</li>
+					<li>(4, 0.1)</li>
+					<li>(4.5, 0)</li>
+				</points>
+			</litterSizeCurve>
+			<lifeExpectancy>14</lifeExpectancy>
+			<lifeStageAges>
+				<li>
+					<def>SummonedCarbuncle</def>
+					<minAge>0.3</minAge>
+				</li>
+			</lifeStageAges>
+			<soundMeleeHitPawn>Pawn_Melee_SmallScratch_HitPawn</soundMeleeHitPawn>
+			<soundMeleeHitBuilding>Pawn_Melee_SmallScratch_HitBuilding</soundMeleeHitBuilding>
+			<soundMeleeMiss>Pawn_Melee_SmallScratch_Miss</soundMeleeMiss>
+		</race>
+		<comps>
+			<li Class="VFECore.CompProperties_ShieldBubble">
+				<compClass>VFECore.Abilities.CompAbilities</compClass>
+				<blockRangedAttack>False</blockRangedAttack>
+				<blockMeleeAttack>False</blockMeleeAttack>
+				<showAlways>True</showAlways>
+			</li>
+			<li Class="AnimalBehaviours.CompProperties_Draftable">
+				<makeNonFleeingToo>true</makeNonFleeingToo>
+			</li>
+		</comps>
+	</ThingDef>
+
+	<PawnKindDef ParentName="AnimalKindBase">
+		<defName>VPECC_SummonedProtoCarbuncle</defName>
+		<label>proto carbuncle</label>
+		<race>VPECC_SummonedProtoCarbuncle</race>
+		<combatPower>500</combatPower>
+		<ecoSystemWeight>1000</ecoSystemWeight>
+		<canArriveManhunter>false</canArriveManhunter>
+		<lifeStages>
+			<li>
+				<bodyGraphicData>
+					<texPath>VPECarbuncleConjurer/Pawns/ProtoCarbuncle/ProtoCarby</texPath>
+					<drawSize>7.5</drawSize>
+					<shadowData>
+						<volume>(0.4, 0.4, 0.4)</volume>
+						<offset>(0,0,-0.2)</offset>
+					</shadowData>
+				</bodyGraphicData>
+				<dessicatedBodyGraphicData>
+					<texPath>Pawns/Animals/ERN_Carbuncle/Dessicated_Carbuncle</texPath>
+					<drawSize>7.5</drawSize>
+				</dessicatedBodyGraphicData>
+			</li>
+		</lifeStages>
+		<modExtensions>
+			<li Class="VFECore.Abilities.PawnKindAbilityExtension">
+				<giveAbilities>
+					<li>VPECC_CarbuncleThunderbolt</li>
+					<li>VPECC_BreatheFlame</li>
+					<li>VPECC_AnimalAllies</li>
+					<li>VPECC_SnapFreeze</li>
+				</giveAbilities>
+				<giveRandomAbilities>false</giveRandomAbilities>
+			</li>
+		</modExtensions>
+	</PawnKindDef>
+
+</Defs>

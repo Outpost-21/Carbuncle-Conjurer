@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+	<HediffDef>
+		<defName>VPECC_CarbuncleOvershield</defName>
+		<label>shield</label>
+		<description>Psychically-induced personal skipbarrier. Impenetrable by ranged projectiles.</description>
+		<hediffClass>VanillaPsycastsExpanded.Hediff_Overshield</hediffClass>
+		<comps>
+			<li Class="HediffCompProperties_Disappears">
+				<showRemainingTime>True</showRemainingTime>
+				<disappearsAfterTicks>2000</disappearsAfterTicks>
+			</li>
+			<li Class="HediffCompProperties_DisappearsOnDeath" />
+			<li Class="VanillaPsycastsExpanded.HediffCompProperties_DisappearsOnDowned" />
+			<li Class="VanillaPsycastsExpanded.HediffCompProperties_DisappearsOnDespawn" />
+		</comps>
+	</HediffDef>
+
+	<HediffDef>
+		<defName>VPECC_CarbuncleShield</defName>
+		<label>shield</label>
+		<description>An overshield that protects the pawn from any ranged attacks.</description>
+		<hediffClass>VanillaPsycastsExpanded.Wildspeaker.Hediff_AnimalShield</hediffClass>
+		<comps>
+			<li Class="HediffCompProperties_Disappears">
+				<showRemainingTime>True</showRemainingTime>
+				<disappearsAfterTicks>2000</disappearsAfterTicks>
+			</li>
+			<li Class="HediffCompProperties_DisappearsOnDeath" />
+			<li Class="VanillaPsycastsExpanded.HediffCompProperties_DisappearsOnDowned" />
+			<li Class="VanillaPsycastsExpanded.HediffCompProperties_DisappearsOnDespawn" />
+		</comps>
+	</HediffDef>
+
+</Defs>

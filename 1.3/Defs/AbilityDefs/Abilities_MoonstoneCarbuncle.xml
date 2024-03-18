@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+	<VFECore.Abilities.AbilityDef ParentName="VPECCPsycastBase">
+		<defName>VPECC_SootheMale</defName>
+		<label>psychic sooth (male)</label>
+		<description>Sends out a signal to a distant engine of happiness to begin projecting a positive psychic drone, while also manipulating an orbital amplifier that only affects males.</description>
+		<iconPath>Abilities/Empath/SootheMale</iconPath>
+		<abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
+		<castSound>PsychicSoothePulserCast</castSound>
+		<castTime>600</castTime>
+		<durationTime>180000</durationTime>
+		<showUndrafted>true</showUndrafted>
+		<fleckOnTarget>PsycastPsychicEffect</fleckOnTarget>
+		<castFleck>VFEP_PsycastAreaEffectSlow</castFleck>
+		<castFleckScale>9</castFleckScale>
+		<targetMode>Self</targetMode>
+		<modExtensions>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_CastPsychicSoothe">
+				<gender>Male</gender>
+			</li>
+			<li Class="VFECore.Abilities.AbilityExtension_Hediff">
+				<hediff>VPE_PsychicSoothe</hediff>
+			</li>
+		</modExtensions>
+	</VFECore.Abilities.AbilityDef>
+
+	<VFECore.Abilities.AbilityDef ParentName="VPECCPsycastBase">
+		<defName>VPECC_SootheFemale</defName>
+		<label>psychic sooth (female)</label>
+		<description>Sends out a signal to a distant engine of happiness to begin projecting a positive psychic drone, while also manipulating an orbital amplifier that only affects females.</description>
+		<iconPath>Abilities/Empath/SootheFemale</iconPath>
+		<abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
+		<castSound>PsychicSoothePulserCast</castSound>
+		<castTime>600</castTime>
+		<durationTime>180000</durationTime>
+		<showUndrafted>true</showUndrafted>
+		<fleckOnTarget>PsycastPsychicEffect</fleckOnTarget>
+		<castFleck>VFEP_PsycastAreaEffectSlow</castFleck>
+		<castFleckScale>9</castFleckScale>
+		<targetMode>Self</targetMode>
+		<modExtensions>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_CastPsychicSoothe">
+				<gender>Female</gender>
+			</li>
+			<li Class="VFECore.Abilities.AbilityExtension_Hediff">
+				<hediff>VPE_PsychicSoothe</hediff>
+			</li>
+		</modExtensions>
+	</VFECore.Abilities.AbilityDef>
+
+</Defs>

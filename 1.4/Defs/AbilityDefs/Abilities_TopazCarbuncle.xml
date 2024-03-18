@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+	<VFECore.Abilities.AbilityDef ParentName="VPECCPsycastBase">
+		<defName>VPECC_CarbuncleChainBolt</defName>
+		<label>chain bolt</label>
+		<description>Projects a living bolt of electricity to a target which can then follow up with 5 more nearby targets, inflicting small burns and EMP damage.</description>
+		<iconPath>Abilities/Staticlord/ChainBolt</iconPath>
+		<abilityClass>VFECore.Abilities.Ability_ShootProjectile</abilityClass>
+		<castTime>9</castTime>
+		<range>22.9</range>
+		<targetMode>Pawn</targetMode>
+		<modExtensions>
+			<li Class="VFECore.Abilities.AbilityExtension_Projectile">
+				<projectile>VPE_ChainBolt</projectile>
+			</li>
+		</modExtensions>
+	</VFECore.Abilities.AbilityDef>
+
+</Defs>

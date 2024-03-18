@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase" Name="CarbuncleSummonBase" Abstract="True">
+		<abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
+		<requireLineOfSight>True</requireLineOfSight>
+		<range>8.9</range>
+		<distanceToTarget>2.9</distanceToTarget>
+		<targetMode>Location</targetMode>
+		<castTime>360</castTime>
+		<needsTicking>true</needsTicking>
+		<showUndrafted>true</showUndrafted>
+		<cooldownTime>1200</cooldownTime>
+		<modExtensions>
+			<li Class="VFECore.Abilities.AbilityExtension_FleckOnTarget">
+				<fleckDefs>
+					<li>PsycastSkipInnerExit</li>
+					<li>PsycastSkipOuterRingExit</li>
+				</fleckDefs>
+				<scale>0.42</scale>
+				<sound>Psycast_Skip_Exit</sound>
+				<preCastTicks>10</preCastTicks>
+			</li>
+			<li Class="VFECore.Abilities.AbilityExtension_EffecterOnTarget">
+				<effecterDef>Skip_Exit</effecterDef>
+				<maintainForTicks>60</maintainForTicks>
+				<scale>0.42</scale>
+			</li>
+		</modExtensions>
+	</VFECore.Abilities.AbilityDef>
+
+	<VFECore.Abilities.AbilityDef ParentName="CarbuncleSummonBase">
+		<defName>VPECC_SummonCarbuncleBlue</defName>
+		<label>peridot carbuncle</label>
+		<description>Summons a permanent Peridot Carbuncle, capable of casting a shield onto pawns, loyal to the conjurer.</description>
+		<iconPath>VPECarbuncleConjurer/Abilities/Ability_CarbuncleBlue</iconPath>
+		<modExtensions>
+			<li Class="VPECC.AbilityExtension_SummonPawn">
+				<pawnKind>VPECC_SummonedCarbuncleBlue</pawnKind>
+				<count>1</count>
+			</li>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>VPECC_CarbuncleConjurerPath</path>
+				<level>1</level>
+				<order>1</order>
+				<psyfocusCost>0.24</psyfocusCost>
+				<entropyGain>29</entropyGain>
+			</li>
+		</modExtensions>
+	</VFECore.Abilities.AbilityDef>
+
+	<VFECore.Abilities.AbilityDef ParentName="CarbuncleSummonBase">
+		<defName>VPECC_SummonCarbuncleRed</defName>
+		<label>ruby carbuncle</label>
+		<description>Summons a permanent Ruby Carbuncle, capable of casting fireball, loyal to the conjurer.</description>
+		<iconPath>VPECarbuncleConjurer/Abilities/Ability_CarbuncleRed</iconPath>
+		<modExtensions>
+			<li Class="VPECC.AbilityExtension_SummonPawn">
+				<pawnKind>VPECC_SummonedCarbuncleRed</pawnKind>
+				<count>1</count>
+			</li>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>VPECC_CarbuncleConjurerPath</path>
+				<level>1</level>
+				<order>1</order>
+				<psyfocusCost>0.24</psyfocusCost>
+				<entropyGain>29</entropyGain>
+			</li>
+		</modExtensions>
+	</VFECore.Abilities.AbilityDef>
+
+	<VFECore.Abilities.AbilityDef ParentName="CarbuncleSummonBase">
+		<defName>VPECC_SummonCarbuncleBlack</defName>
+		<label>obsidian carbuncle</label>
+		<description>Summons a permanent Obsidian Carbuncle, capable of summoning a sphere of darkness, loyal to the conjurer.</description>
+		<iconPath>VPECarbuncleConjurer/Abilities/Ability_CarbuncleBlack</iconPath>
+		<modExtensions>
+			<li Class="VPECC.AbilityExtension_SummonPawn">
+				<pawnKind>VPECC_SummonedCarbuncleBlack</pawnKind>
+				<count>1</count>
+			</li>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>VPECC_CarbuncleConjurerPath</path>
+				<level>1</level>
+				<order>1</order>
+				<psyfocusCost>0.24</psyfocusCost>
+				<entropyGain>29</entropyGain>
+			</li>
+		</modExtensions>
+	</VFECore.Abilities.AbilityDef>
+
+	<VFECore.Abilities.AbilityDef ParentName="CarbuncleSummonBase">
+		<defName>VPECC_SummonCarbuncleWhite</defName>
+		<label>moonstone carbuncle</label>
+		<description>Summons a permanent Moonstone Carbuncle, capable of soothing both male and female pawns psychically, loyal to the conjurer.</description>
+		<iconPath>VPECarbuncleConjurer/Abilities/Ability_CarbuncleWhite</iconPath>
+		<modExtensions>
+			<li Class="VPECC.AbilityExtension_SummonPawn">
+				<pawnKind>VPECC_SummonedCarbuncleWhite</pawnKind>
+				<count>1</count>
+			</li>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>VPECC_CarbuncleConjurerPath</path>
+				<level>2</level>
+				<order>2</order>
+				<psyfocusCost>0.24</psyfocusCost>
+				<entropyGain>29</entropyGain>
+			</li>
+		</modExtensions>
+	</VFECore.Abilities.AbilityDef>
+
+	<VFECore.Abilities.AbilityDef ParentName="CarbuncleSummonBase">
+		<defName>VPECC_SummonCarbuncleYellow</defName>
+		<label>topaz carbuncle</label>
+		<description>Summons a permanent Topaz Carbuncle, capable of casting chain lightning, loyal to the conjurer.</description>
+		<iconPath>VPECarbuncleConjurer/Abilities/Ability_CarbuncleOrange</iconPath>
+		<modExtensions>
+			<li Class="VPECC.AbilityExtension_SummonPawn">
+				<pawnKind>VPECC_SummonedCarbuncleYellow</pawnKind>
+				<count>1</count>
+			</li>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>VPECC_CarbuncleConjurerPath</path>
+				<level>2</level>
+				<order>2</order>
+				<psyfocusCost>0.24</psyfocusCost>
+				<entropyGain>29</entropyGain>
+			</li>
+		</modExtensions>
+	</VFECore.Abilities.AbilityDef>
+
+	<VFECore.Abilities.AbilityDef ParentName="CarbuncleSummonBase">
+		<defName>VPECC_SummonCarbuncleGreen</defName>
+		<label>emerald carbuncle</label>
+		<description>Summons a permanent Emerald Carbuncle, capable of summoning a bramble maze, loyal to the conjurer.</description>
+		<iconPath>VPECarbuncleConjurer/Abilities/Ability_CarbuncleGreen</iconPath>
+		<modExtensions>
+			<li Class="VPECC.AbilityExtension_SummonPawn">
+				<pawnKind>VPECC_SummonedCarbuncleGreen</pawnKind>
+				<count>1</count>
+			</li>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>VPECC_CarbuncleConjurerPath</path>
+				<level>2</level>
+				<order>2</order>
+				<psyfocusCost>0.24</psyfocusCost>
+				<entropyGain>29</entropyGain>
+			</li>
+		</modExtensions>
+	</VFECore.Abilities.AbilityDef>
+
+	<VFECore.Abilities.AbilityDef ParentName="CarbuncleSummonBase">
+		<defName>VPECC_SummonCarbuncleHerd</defName>
+		<label>carbuncle herd</label>
+		<description>Summons a dozen temporary carbuncles of random variety from the casters already known summons, loyal to the conjurer.</description>
+		<iconPath>VPECarbuncleConjurer/Abilities/Ability_CarbuncleHerd</iconPath>
+		<modExtensions>
+			<li Class="VPECC.AbilityExtension_SummonKnownCarbuncle">
+				<count>12</count>
+				<hediff>VPECC_TemporaryPawn</hediff>
+			</li>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>VPECC_CarbuncleConjurerPath</path>
+				<level>3</level>
+				<order>3</order>
+				<psyfocusCost>0.5</psyfocusCost>
+				<entropyGain>60</entropyGain>
+				<prerequisites>
+					<li>VPECC_SummonCarbuncleBlack</li>
+					<li>VPECC_SummonCarbuncleBlue</li>
+					<li>VPECC_SummonCarbuncleGreen</li>
+					<li>VPECC_SummonCarbuncleYellow</li>
+					<li>VPECC_SummonCarbuncleRed</li>
+					<li>VPECC_SummonCarbuncleWhite</li>
+				</prerequisites>
+			</li>
+		</modExtensions>
+	</VFECore.Abilities.AbilityDef>
+
+	<VFECore.Abilities.AbilityDef ParentName="CarbuncleSummonBase">
+		<defName>VPECC_SummonCarbuncleSapphire</defName>
+		<label>sapphire carbuncle</label>
+		<description>Summons a permanent Sapphire Carbuncle, capable of summoning the other Carbuncles itself, loyal to the conjurer.</description>
+		<iconPath>VPECarbuncleConjurer/Abilities/Ability_CarbuncleStreamer</iconPath>
+		<modExtensions>
+			<li Class="VPECC.AbilityExtension_SummonPawn">
+				<pawnKind>VPECC_SummonedCarbuncleSapphire</pawnKind>
+				<count>1</count>
+			</li>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>VPECC_CarbuncleConjurerPath</path>
+				<level>4</level>
+				<order>4</order>
+				<psyfocusCost>0.24</psyfocusCost>
+				<entropyGain>29</entropyGain>
+				<prerequisites>
+					<li>VPECC_SummonCarbuncleHerd</li>
+				</prerequisites>
+			</li>
+		</modExtensions>
+	</VFECore.Abilities.AbilityDef>
+
+	<VFECore.Abilities.AbilityDef ParentName="CarbuncleSummonBase">
+		<defName>VPECC_SummonCarbuncleProto</defName>
+		<label>proto carbuncle</label>
+		<description>Summons a temporary Proto Carbuncle, capable of massive devastation, loyal to the conjurer.</description>
+		<iconPath>VPECarbuncleConjurer/Abilities/Ability_CarbuncleProto</iconPath>
+		<modExtensions>
+			<li Class="VPECC.AbilityExtension_SummonPawn">
+				<pawnKind>VPECC_SummonedProtoCarbuncle</pawnKind>
+				<count>1</count>
+				<hediff>VPECC_TemporaryPawn</hediff>
+			</li>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>VPECC_CarbuncleConjurerPath</path>
+				<level>5</level>
+				<order>5</order>
+				<psyfocusCost>0.5</psyfocusCost>
+				<entropyGain>120</entropyGain>
+				<prerequisites>
+					<li>VPECC_SummonCarbuncleSapphire</li>
+				</prerequisites>
+			</li>
+		</modExtensions>
+	</VFECore.Abilities.AbilityDef>
+
+</Defs>

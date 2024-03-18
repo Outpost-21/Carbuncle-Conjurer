@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<LifeStageDef>
+		<defName>SummonedCarbuncle</defName>
+		<label>adult</label>
+		<visible>false</visible>
+		<reproductive>false</reproductive>
+		<milkable>false</milkable>
+		<shearable>false</shearable>
+		<caravanRideable>true</caravanRideable>
+	</LifeStageDef>
+
+	<ThingDef ParentName="AnimalThingBase">
+		<defName>VPECC_SummonedCarbuncle</defName>
+		<label>carbuncle</label>
+		<description>No one is quite sure of the origin of the carbuncle - some posit they are a naturally-occurring species on some distant rimworld that glitterworlders took a fancy to and spread throughout the universe, others say they are an amalgamation of various species of Old Terra, designer-made to be adorable pets to the high classes that have since become naturalized on many worlds.  And yet others deep into their cups of ambrosia would tell you they're born from gemstones as the result of 'magic' - an experiment of a bored psycaster with a lot of coin and free time on their hands.  All backstories have the same result - an adorable, intelligent furry quadruped who makes a great companion on lonely rimworlds.</description>
+		<statBases>
+			<MoveSpeed>5.0</MoveSpeed>
+			<ComfyTemperatureMin>-35</ComfyTemperatureMin>
+			<MarketValue>300</MarketValue>
+		</statBases>
+		<tools>
+			<li>
+				<label>left claw</label>
+				<capacities>
+					<li>Scratch</li>
+				</capacities>
+				<power>8</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>FrontLeftPaw</linkedBodyPartsGroup>
+				<surpriseAttack>
+					<extraMeleeDamages>
+						<li>
+							<def>Stun</def>
+							<amount>14</amount>
+						</li>
+					</extraMeleeDamages>
+				</surpriseAttack>
+			</li>
+			<li>
+				<label>right claw</label>
+				<capacities>
+					<li>Scratch</li>
+				</capacities>
+				<power>8</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>FrontRightPaw</linkedBodyPartsGroup>
+				<surpriseAttack>
+					<extraMeleeDamages>
+						<li>
+							<def>Stun</def>
+							<amount>14</amount>
+						</li>
+					</extraMeleeDamages>
+				</surpriseAttack>
+			</li>
+			<li>
+				<capacities>
+					<li>Bite</li>
+				</capacities>
+				<power>9</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
+				<chanceFactor>0.9</chanceFactor>
+				<surpriseAttack>
+					<extraMeleeDamages>
+						<li>
+							<def>Stun</def>
+							<amount>14</amount>
+						</li>
+					</extraMeleeDamages>
+				</surpriseAttack>
+			</li>
+			<li>
+				<label>head</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>4</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+				<ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+				<chanceFactor>0.2</chanceFactor>
+			</li>
+		</tools>
+		<race>
+			<fleshType>VPECC_Carbie</fleshType>
+			<deathActionWorkerClass>VPECC.DeathActionWorker_Vanish</deathActionWorkerClass>
+			<body>QuadrupedAnimalWithPawsAndTail</body>
+			<petness>0.1</petness>
+			<baseBodySize>0.6</baseBodySize>
+			<baseHungerRate>0.16</baseHungerRate>
+			<baseHealthScale>1.1</baseHealthScale>
+			<foodType>OmnivoreRoughAnimal</foodType>
+			<leatherDef>Leather_Fox</leatherDef>
+			<trainability>Advanced</trainability>
+			<wildness>0.50</wildness>
+			<useMeatFrom>Fox_Fennec</useMeatFrom>
+			<packAnimal>true</packAnimal>
+			<nuzzleMtbHours>10</nuzzleMtbHours>
+			<nameOnTameChance>1</nameOnTameChance>
+			<gestationPeriodDays>10</gestationPeriodDays>
+			<manhunterOnDamageChance>0.05</manhunterOnDamageChance>
+			<manhunterOnTameFailChance>0.02</manhunterOnTameFailChance>
+			<litterSizeCurve>
+				<points>
+					<li>(0.5, 0)</li>
+					<li>(1, 1)</li>
+					<li>(2, 1)</li>
+					<li>(3, 0.2)</li>
+					<li>(4, 0.1)</li>
+					<li>(4.5, 0)</li>
+				</points>
+			</litterSizeCurve>
+			<lifeExpectancy>14</lifeExpectancy>
+			<lifeStageAges>
+				<li>
+					<def>SummonedCarbuncle</def>
+					<minAge>0.3</minAge>
+				</li>
+			</lifeStageAges>
+			<soundMeleeHitPawn>Pawn_Melee_SmallScratch_HitPawn</soundMeleeHitPawn>
+			<soundMeleeHitBuilding>Pawn_Melee_SmallScratch_HitBuilding</soundMeleeHitBuilding>
+			<soundMeleeMiss>Pawn_Melee_SmallScratch_Miss</soundMeleeMiss>
+		</race>
+		<comps>
+			<li Class="VFECore.CompProperties_ShieldBubble">
+				<compClass>VFECore.Abilities.CompAbilities</compClass>
+				<blockRangedAttack>False</blockRangedAttack>
+				<blockMeleeAttack>False</blockMeleeAttack>
+				<showAlways>True</showAlways>
+			</li>
+			<li Class="AnimalBehaviours.CompProperties_Draftable">
+				<makeNonFleeingToo>true</makeNonFleeingToo>
+			</li>
+		</comps>
+	</ThingDef>
+
+	<PawnKindDef ParentName="AnimalKindBase">
+		<defName>VPECC_SummonedCarbuncleBlue</defName>
+		<label>peridot carbuncle</label>
+		<race>VPECC_SummonedCarbuncle</race>
+		<combatPower>120</combatPower>
+		<ecoSystemWeight>1</ecoSystemWeight>
+		<canArriveManhunter>false</canArriveManhunter>
+		<lifeStages>
+			<li>
+				<bodyGraphicData>
+					<texPath>Pawns/Animals/ERN_Carbuncle/CarbuncleBlue</texPath>
+					<drawSize>1.7</drawSize>
+					<shadowData>
+						<volume>(0.4, 0.4, 0.4)</volume>
+						<offset>(0,0,-0.2)</offset>
+					</shadowData>
+				</bodyGraphicData>
+				<dessicatedBodyGraphicData>
+					<texPath>Pawns/Animals/ERN_Carbuncle/Dessicated_Carbuncle</texPath>
+					<drawSize>1.7</drawSize>
+				</dessicatedBodyGraphicData>
+			</li>
+		</lifeStages>
+		<modExtensions>
+			<li Class="VFECore.Abilities.PawnKindAbilityExtension">
+				<giveAbilities>
+					<li>VPECC_CarbuncleShield</li>
+				</giveAbilities>
+				<giveRandomAbilities>false</giveRandomAbilities>
+			</li>
+		</modExtensions>
+	</PawnKindDef>
+
+	<PawnKindDef ParentName="AnimalKindBase">
+		<defName>VPECC_SummonedCarbuncleBlack</defName>
+		<label>obsidian carbuncle</label>
+		<race>VPECC_SummonedCarbuncle</race>
+		<combatPower>120</combatPower>
+		<ecoSystemWeight>1</ecoSystemWeight>
+		<canArriveManhunter>false</canArriveManhunter>
+		<lifeStages>
+			<li>
+				<bodyGraphicData>
+					<texPath>Pawns/Animals/ERN_Carbuncle/CarbuncleBlack</texPath>
+					<drawSize>1.7</drawSize>
+					<shadowData>
+						<volume>(0.4, 0.4, 0.4)</volume>
+						<offset>(0,0,-0.2)</offset>
+					</shadowData>
+				</bodyGraphicData>
+				<dessicatedBodyGraphicData>
+					<texPath>Pawns/Animals/ERN_Carbuncle/Dessicated_Carbuncle</texPath>
+					<drawSize>1.7</drawSize>
+				</dessicatedBodyGraphicData>
+			</li>
+		</lifeStages>
+		<modExtensions>
+			<li Class="VFECore.Abilities.PawnKindAbilityExtension">
+				<giveAbilities>
+					<li>VPECC_Darkness</li>
+				</giveAbilities>
+				<giveRandomAbilities>false</giveRandomAbilities>
+			</li>
+		</modExtensions>
+	</PawnKindDef>
+
+	<PawnKindDef ParentName="AnimalKindBase">
+		<defName>VPECC_SummonedCarbuncleGreen</defName>
+		<label>emerald carbuncle</label>
+		<race>VPECC_SummonedCarbuncle</race>
+		<combatPower>120</combatPower>
+		<ecoSystemWeight>1</ecoSystemWeight>
+		<canArriveManhunter>false</canArriveManhunter>
+		<lifeStages>
+			<li>
+				<bodyGraphicData>
+					<texPath>Pawns/Animals/ERN_Carbuncle/CarbuncleGreen</texPath>
+					<drawSize>1.7</drawSize>
+					<shadowData>
+						<volume>(0.4, 0.4, 0.4)</volume>
+						<offset>(0,0,-0.2)</offset>
+					</shadowData>
+				</bodyGraphicData>
+				<dessicatedBodyGraphicData>
+					<texPath>Pawns/Animals/ERN_Carbuncle/Dessicated_Carbuncle</texPath>
+					<drawSize>1.7</drawSize>
+				</dessicatedBodyGraphicData>
+			</li>
+		</lifeStages>
+		<modExtensions>
+			<li Class="VFECore.Abilities.PawnKindAbilityExtension">
+				<giveAbilities>
+					<li>VPECC_BrambleMaze</li>
+				</giveAbilities>
+				<giveRandomAbilities>false</giveRandomAbilities>
+			</li>
+		</modExtensions>
+	</PawnKindDef>
+
+	<PawnKindDef ParentName="AnimalKindBase">
+		<defName>VPECC_SummonedCarbuncleYellow</defName>
+		<label>topaz carbuncle</label>
+		<race>VPECC_SummonedCarbuncle</race>
+		<combatPower>120</combatPower>
+		<ecoSystemWeight>1</ecoSystemWeight>
+		<canArriveManhunter>false</canArriveManhunter>
+		<lifeStages>
+			<li>
+				<bodyGraphicData>
+					<texPath>Pawns/Animals/ERN_Carbuncle/CarbuncleYellow</texPath>
+					<drawSize>1.7</drawSize>
+					<shadowData>
+						<volume>(0.4, 0.4, 0.4)</volume>
+						<offset>(0,0,-0.2)</offset>
+					</shadowData>
+				</bodyGraphicData>
+				<dessicatedBodyGraphicData>
+					<texPath>Pawns/Animals/ERN_Carbuncle/Dessicated_Carbuncle</texPath>
+					<drawSize>1.7</drawSize>
+				</dessicatedBodyGraphicData>
+			</li>
+		</lifeStages>
+		<modExtensions>
+			<li Class="VFECore.Abilities.PawnKindAbilityExtension">
+				<giveAbilities>
+					<li>VPECC_CarbuncleChainBolt</li>
+				</giveAbilities>
+				<giveRandomAbilities>false</giveRandomAbilities>
+			</li>
+		</modExtensions>
+	</PawnKindDef>
+
+	<PawnKindDef ParentName="AnimalKindBase">
+		<defName>VPECC_SummonedCarbuncleRed</defName>
+		<label>ruby carbuncle</label>
+		<race>VPECC_SummonedCarbuncle</race>
+		<combatPower>120</combatPower>
+		<ecoSystemWeight>1</ecoSystemWeight>
+		<canArriveManhunter>false</canArriveManhunter>
+		<lifeStages>
+			<li>
+				<bodyGraphicData>
+					<texPath>Pawns/Animals/ERN_Carbuncle/CarbuncleRed</texPath>
+					<drawSize>1.7</drawSize>
+					<shadowData>
+						<volume>(0.4, 0.4, 0.4)</volume>
+						<offset>(0,0,-0.2)</offset>
+					</shadowData>
+				</bodyGraphicData>
+				<dessicatedBodyGraphicData>
+					<texPath>Pawns/Animals/ERN_Carbuncle/Dessicated_Carbuncle</texPath>
+					<drawSize>1.7</drawSize>
+				</dessicatedBodyGraphicData>
+			</li>
+		</lifeStages>
+		<modExtensions>
+			<li Class="VFECore.Abilities.PawnKindAbilityExtension">
+				<giveAbilities>
+					<li>VPECC_Flameball</li>
+				</giveAbilities>
+				<giveRandomAbilities>false</giveRandomAbilities>
+			</li>
+		</modExtensions>
+	</PawnKindDef>
+
+	<PawnKindDef ParentName="AnimalKindBase">
+		<defName>VPECC_SummonedCarbuncleWhite</defName>
+		<label>moonstone carbuncle</label>
+		<race>VPECC_SummonedCarbuncle</race>
+		<combatPower>120</combatPower>
+		<ecoSystemWeight>1</ecoSystemWeight>
+		<canArriveManhunter>false</canArriveManhunter>
+		<lifeStages>
+			<li>
+				<bodyGraphicData>
+					<texPath>Pawns/Animals/ERN_Carbuncle/CarbuncleWhite</texPath>
+					<drawSize>1.7</drawSize>
+					<shadowData>
+						<volume>(0.4, 0.4, 0.4)</volume>
+						<offset>(0,0,-0.2)</offset>
+					</shadowData>
+				</bodyGraphicData>
+				<dessicatedBodyGraphicData>
+					<texPath>Pawns/Animals/ERN_Carbuncle/Dessicated_Carbuncle</texPath>
+					<drawSize>1.7</drawSize>
+				</dessicatedBodyGraphicData>
+			</li>
+		</lifeStages>
+		<modExtensions>
+			<li Class="VFECore.Abilities.PawnKindAbilityExtension">
+				<giveAbilities>
+					<li>VPECC_SootheMale</li>
+					<li>VPECC_SootheFemale</li>
+				</giveAbilities>
+				<giveRandomAbilities>false</giveRandomAbilities>
+			</li>
+		</modExtensions>
+	</PawnKindDef>
+
+	<PawnKindDef ParentName="AnimalKindBase">
+		<defName>VPECC_SummonedCarbuncleSapphire</defName>
+		<label>sapphire carbuncle</label>
+		<race>VPECC_SummonedCarbuncle</race>
+		<combatPower>120</combatPower>
+		<ecoSystemWeight>1</ecoSystemWeight>
+		<canArriveManhunter>false</canArriveManhunter>
+		<lifeStages>
+			<li>
+				<bodyGraphicData>
+					<texPath>Pawns/Animals/ERN_Carbuncle/CarbunclePink</texPath>
+					<drawSize>1.7</drawSize>
+					<shadowData>
+						<volume>(0.4, 0.4, 0.4)</volume>
+						<offset>(0,0,-0.2)</offset>
+					</shadowData>
+				</bodyGraphicData>
+				<dessicatedBodyGraphicData>
+					<texPath>Pawns/Animals/ERN_Carbuncle/Dessicated_Carbuncle</texPath>
+					<drawSize>1.7</drawSize>
+				</dessicatedBodyGraphicData>
+			</li>
+		</lifeStages>
+		<modExtensions>
+			<li Class="VFECore.Abilities.PawnKindAbilityExtension">
+				<giveAbilities>
+					<li>VPECC_SummonRandomCarbuncle</li>
+				</giveAbilities>
+				<giveRandomAbilities>false</giveRandomAbilities>
+			</li>
+		</modExtensions>
+	</PawnKindDef>
+
+</Defs>
