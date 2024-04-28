@@ -12,9 +12,9 @@ using VFECore.Abilities;
 
 namespace VPECC
 {
-    public class AbilityExtension_SummonRandomPawn : AbilityExtension_AbilityMod
+    public class AbilityExtension_SummonPawn : AbilityExtension_AbilityMod
     {
-        public List<PawnKindDef> pawnKinds;
+        public PawnKindDef pawnKind;
 
         public int count = 1;
 
@@ -25,16 +25,18 @@ namespace VPECC
             base.Cast(targets, ability);
             for (int i = 0; i < count; i++)
             {
-                SpawnPawn(targets.First().Cell, targets.First().Map, ability.Caster.Faction);
+                SpawnPawn(targets.First().Cell, targets.First().Map, ability.Caster as Pawn);
             }
         }
 
-        public void SpawnPawn(IntVec3 pos, Map map, Faction faction)
+        public void SpawnPawn(IntVec3 pos, Map map, Pawn caster)
         {
-            if (!pawnKinds.NullOrEmpty())
+            if (pawnKind != null)
             {
-                PawnKindDef kindDef = pawnKinds.RandomElement();
-                SpawnUtil.SpawnPawn(kindDef, pos, map, faction, hediff);
+                Pawn pawn = PawnGenerator.GeneratePawn(pawnKind, caster.Faction);
+                pawn.health.AddHediff(hediff);
+                pawn.TryGetComp<Comp_CasterConnection>().casterPawn = caster;
+                GenSpawn.Spawn(pawn, pos, map);
             }
         }
     }

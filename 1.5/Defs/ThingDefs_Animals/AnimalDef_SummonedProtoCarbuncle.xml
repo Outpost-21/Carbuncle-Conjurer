@@ -79,7 +79,9 @@
 		</tools>
 		<race>
 			<fleshType>VPECC_Carbie</fleshType>
-			<deathActionWorkerClass>VPECC.DeathActionWorker_Vanish</deathActionWorkerClass>
+			<deathAction>
+				<workerClass>VPECC.DeathActionWorker_Vanish</workerClass>
+			</deathAction>
 			<body>QuadrupedAnimalWithPawsAndTail</body>
 			<petness>0.1</petness>
 			<baseBodySize>5.5</baseBodySize>
@@ -124,6 +126,7 @@
 			<li Class="AnimalBehaviours.CompProperties_Draftable">
 				<makeNonFleeingToo>true</makeNonFleeingToo>
 			</li>
+			<li Class="VPECC.CompProperties_CasterConnection" />
 		</comps>
 	</ThingDef>
 

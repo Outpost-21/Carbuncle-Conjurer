@@ -9,11 +9,11 @@ using Verse;
 
 namespace VPECC
 {
-    public class DeathActionWorker_Vanish : DeathActionWorker
+    public class CompProperties_CasterConnection : CompProperties
     {
-        public override void PawnDied(Corpse corpse)
+        public CompProperties_CasterConnection()
         {
-            corpse.Destroy();
+            compClass = typeof(Comp_CasterConnection);
         }
     }
 }

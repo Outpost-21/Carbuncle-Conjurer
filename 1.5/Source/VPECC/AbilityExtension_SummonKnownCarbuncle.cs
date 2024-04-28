@@ -36,17 +36,20 @@ namespace VPECC
 
             for (int i = 0; i < count; i++)
             {
-                SpawnPawn(targets.First().Cell, targets.First().Map, ability.Caster.Faction);
+                SpawnPawn(targets.First().Cell, targets.First().Map, ability.Caster as Pawn);
             }
         }
 
-        public void SpawnPawn(IntVec3 pos, Map map, Faction faction)
+        public void SpawnPawn(IntVec3 pos, Map map, Pawn caster)
         {
             if (!knownCarbuncles.NullOrEmpty())
             {
                 PawnKindDef kindDef;
                 knownCarbuncles.TryRandomElement(out kindDef);
-                SpawnUtil.SpawnPawn(kindDef, pos, map, faction, hediff);
+                Pawn pawn = PawnGenerator.GeneratePawn(kindDef, caster.Faction);
+                pawn.health.AddHediff(hediff);
+                pawn.TryGetComp<Comp_CasterConnection>().casterPawn = caster;
+                GenSpawn.Spawn(pawn, pos, map);
             }
         }
     }
